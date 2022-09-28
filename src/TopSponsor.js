@@ -20,6 +20,20 @@ class TopSponsor extends Component {
         const sunny = 10**18;
 
         let { contractInstance } = await getBlockchain();
+        let pool_balance = await contractInstance.pool_balance();
+        this.setState({ pool_balance : (Number(pool_balance)/10**6) });   
+        this.setState({ topShare : Number( this.state.pool_balance/10).toFixed(4)   });   
+        this.setState({ topShare1 : Number( this.state.topShare*40/100).toFixed(4)   });   
+        this.setState({ topShare2 : Number( this.state.topShare*20/100).toFixed(4)   });   
+        this.setState({ topShare3 : Number( this.state.topShare*15/100).toFixed(4)   });   
+        this.setState({ topShare4 : Number( this.state.topShare*15/100).toFixed(4)   });   
+        this.setState({ topShare5 : Number( this.state.topShare*10/100).toFixed(4)   });   
+ 
+        this.setState({ topShareUSD1 : Number(this.state.topShare1*this.props.prmPrice).toFixed(4)   });   
+        this.setState({ topShareUSD2 : Number(this.state.topShare2*this.props.prmPrice).toFixed(4)   });   
+        this.setState({ topShareUSD3 : Number(this.state.topShare3*this.props.prmPrice).toFixed(4)   });   
+        this.setState({ topShareUSD4 : Number(this.state.topShare4*this.props.prmPrice).toFixed(4)   });   
+        this.setState({ topShareUSD5 : Number(this.state.topShare5*this.props.prmPrice).toFixed(4)   }); 
  
         const poolTopInfo = await contractInstance.poolTopInfo() ;
         var addrs1, addrs2, addrs3, addrs4, addrs5, deps1, deps2, deps3, deps4, deps5;
@@ -112,6 +126,18 @@ class TopSponsor extends Component {
                         <a href={url} >  <img src={require("./assets/logo.png")} alt="Logo" width="260px" /></a>
                     </div> */}
                     <TopSponsor2
+                        
+                        topShare1={this.state.topShare1}
+                        topShare2={this.state.topShare2}
+                        topShare3={this.state.topShare3}
+                        topShare4={this.state.topShare4}
+                        topShare5={this.state.topShare5}
+
+                        topShareUSD1={this.state.topShareUSD1}
+                        topShareUSD2={this.state.topShareUSD2}
+                        topShareUSD3={this.state.topShareUSD3}
+                        topShareUSD4={this.state.topShareUSD4}
+                        topShareUSD5={this.state.topShareUSD5}
                         deps1={this.state.deps1}
                         subAddress1={this.state.subAddress1}
                         deps2={this.state.deps2}

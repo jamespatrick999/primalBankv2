@@ -115,6 +115,18 @@ class TopPage extends Component {
 
        let pool_balance = await contractInstance.pool_balance();
        this.setState({ pool_balance : (Number(pool_balance)/10**(this.state.tokenDecimals)) });   
+       this.setState({ topShare : this.state.pool_balance/10   });   
+       this.setState({ topShare1 : this.state.topShare*40/100   });   
+       this.setState({ topShare2 : this.state.topShare*20/100   });   
+       this.setState({ topShare3 : this.state.topShare*15/100   });   
+       this.setState({ topShare4 : this.state.topShare*15/100   });   
+       this.setState({ topShare5 : this.state.topShare*10/100   });   
+
+       this.setState({ topShareUSD1 : (this.state.topShare*this.state.prmPrice).toFixed(4)   });   
+       this.setState({ topShareUSD2 : (this.state.topShare*this.state.prmPrice).toFixed(4)   });   
+       this.setState({ topShareUSD3 : (this.state.topShare*this.state.prmPrice).toFixed(4)   });   
+       this.setState({ topShareUSD4 : (this.state.topShare*this.state.prmPrice).toFixed(4)   });   
+       this.setState({ topShareUSD5 : (this.state.topShare*this.state.prmPrice).toFixed(4)   }); 
 
 
        let pool_cycle = await contractInstance.pool_cycle();
@@ -230,6 +242,8 @@ class TopPage extends Component {
                     currentAcc = {this.state.currentAcc}
                 />
                 <TopSponsor
+                    prmPrice   = {this.state.prmPrice } 
+
                 />
 
                     
