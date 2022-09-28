@@ -8,14 +8,7 @@ class Withdraw extends Component {
             backgroundImage: "radial-gradient(black, #131050 )", opacity: "70%", marginTop: "20px", borderRadius: "20px", marginLeft: "20px", marginRight: "20px",
             boxShadow: "0 0 20px #eee"
         };
-
-        const investButton = {
-            display: "inline-block",
-            padding: "0.5em 1em",
-            textDecoration: "none",
-            color: "black",
-            transition: ".4s", marginTop: "30px", marginBottom: "-22px", fontWeight: "bold", fontFamily: "MyFont", textAlign: "center", backgroundImage: "linear-gradient(to right, #FFDD00, #FBB034)", fontSize: "18px", borderRadius: "30px"
-        };
+ 
 
         return (
 

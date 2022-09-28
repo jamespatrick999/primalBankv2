@@ -10,8 +10,7 @@ import back from "./assets/bg10.jpg"
 import logo from "./assets/logov2.png" 
 import ReferralLink from './ReferralLink.js';
 import Withdraw from './Withdraw.js';
-import "./css/style.css"; 
-  
+import "./css/style.css";  
 
 class TopPage extends Component { 
 
@@ -85,6 +84,7 @@ class TopPage extends Component {
 
        let { tokenInstance, currentAcc, tokenAddress, contractInstance, contractAddress } = await getBlockchain();
        this.setState({currentAcc});
+       this.setState({tokenAddress});
        
        let symbol  = await tokenInstance.symbol() ;
        this.setState({ symbol });

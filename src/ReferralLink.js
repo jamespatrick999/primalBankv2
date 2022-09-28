@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 // let url = "https://biyondinfinity.farm/a/";
-let url = "http://localhost:3001/a/";
+let url = "https://incomparable-pie-5be273.netlify.app/a/";
 
 export class ReferralLink extends Component {
 
