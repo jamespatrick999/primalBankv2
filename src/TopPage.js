@@ -17,31 +17,23 @@ class TopPage extends Component {
    componentDidMount = async() => {
 
         await this.loadBlockChainData();  
-        // this.timerData();  
-
         let priceURL = "https://api.pancakeswap.info/api/v2/tokens/0x2668BAbeAB11780c516B1d3aD02011668AFF8aa0";
-         
-        // let prmPrice = fetch(priceURL)
-        // .then(res => res.json())
-        // .then((out) => {
-        //     this.setState({prmPrice : Number(out.data.price).toFixed(4)})
-        //     console.log('price - ', Number(out.data.price).toFixed(4) );
-        // //    console.log(this.state.prmPrice)
-        // })
-        // .catch(err => { throw err }); 
-
         let obj = await (await fetch(priceURL)).json();
         this.setState({prmPrice:Number(obj.data.price).toFixed(4)})
 
-        console.log(this.state.prmPrice)
+        this.timerData();   
          
    } 
 
    timerData = async () => {
     let { contractInstance } = await getBlockchain();
 
-    const pool_last_draw = await contractInstance.pool_last_draw();
-       this.setState({ pool_last_draw: Number(pool_last_draw) });
+    
+    // console.log(this.state.prmPrice)
+        let contractInfo = await contractInstance.contractInfo(); 
+        this.setState({ pool_last_draw : (Number(contractInfo._pool_last_draw)) });
+  
+        console.log(this.state.pool_last_draw)
 
        const time_step = await contractInstance.time_period();
        this.setState({ time_step: Number(time_step) });
@@ -68,15 +60,10 @@ class TopPage extends Component {
         } else {
             draw_secs = next_draw_time;
         }
+
         this.setState({ draw_hrs });
         this.setState({ draw_mins });
-        this.setState({ draw_secs });
-        // console.log('next draw hrs - ' + this.state.draw_hrs)
-        // console.log('next draw mins - ' + this.state.draw_mins)
-        // console.log('next draw secs - ' + this.state.draw_secs)
-
-        
-
+        this.setState({ draw_secs }); 
        
     }     
 
@@ -91,29 +78,29 @@ class TopPage extends Component {
 
        let tokenDecimals  = await tokenInstance.decimals() ;
        this.setState({ tokenDecimals : Number(tokenDecimals) });
-       console.log('tokendecimals '+tokenDecimals)
+    //    console.log('tokendecimals '+tokenDecimals)
 
        let tokenApproved  = await tokenInstance.allowance(currentAcc, contractAddress) ;
        this.setState({ tokenApproved : Number(tokenApproved)/10**(this.state.tokenDecimals) });
-       console.log('tokenApproved '+tokenApproved) 
+    //    console.log('tokenApproved '+tokenApproved) 
 
        let tokenBal  = await tokenInstance.balanceOf(currentAcc) ;
        this.setState({ tokenBal : (Number(tokenBal)/10**(this.state.tokenDecimals)) });   
-       console.log('tokenbal '+this.state.tokenBal) 
+    //    console.log('tokenbal '+this.state.tokenBal) 
 
        let contractBal  = await tokenInstance.balanceOf(contractAddress) ;
        this.setState({ contractBal : (Number(contractBal)/10**(this.state.tokenDecimals)) });   
-       console.log('tokenbal '+this.state.contractBal) 
+    //    console.log('tokenbal '+this.state.contractBal) 
 
        let contractRTBal  = await tokenInstance.balanceOf(contractAddress) ;
        this.setState({ contractRTBal : (Number(contractRTBal)/10**(this.state.tokenDecimals)) }); 
-       console.log('tokenApproved '+tokenApproved) 
+    //    console.log('tokenApproved '+tokenApproved) 
 
        // Contract Instance
 
        let ownerAddress  = await contractInstance.owner() ;
        this.setState({ ownerAddress });
-//       console.log('owner ' + ownerAddress); 
+    //   console.log('owner ' + ownerAddress); 
 
         if (this.props.refLinkid) {
             this.setState({ refid: this.props.refLinkid });
@@ -121,7 +108,7 @@ class TopPage extends Component {
         } else {
             this.setState({ refid: this.state.ownerAddress });
         }
-         console.log('refid- '+this.state.refid);
+        //  console.log('refid- '+this.state.refid);
 
     //    let rtPrice = await contractInstance.getRTPrice();
     //    this.setState({ rtPrice : (Number(rtPrice)/10**(this.state.tokenDecimals)) });   
@@ -152,33 +139,17 @@ class TopPage extends Component {
        this.setState({ instant_bonus : (Number(userInfo.instant_bonus)/10**(this.state.tokenDecimals)) });
        this.setState({ gen_bonus : (Number(userInfo.gen_bonus)/10**(this.state.tokenDecimals)) }); 
        this.setState({ user_status : userInfo.user_status  }); 
-       console.log(this.state.user_status) 
+    //    console.log(this.state.user_status) 
 
        let userInfo2 = await contractInstance.userInfoTotals(this.state.currentAcc);
-       console.log(userInfo2)
+    //    console.log(userInfo2)
        this.setState({ referrals : Number(userInfo2.referrals) });
        this.setState({ total_stakes : (Number(userInfo2.total_stakes)/10**(this.state.tokenDecimals)) });
        this.setState({ total_payouts : (Number(userInfo2.total_payouts)/10**(this.state.tokenDecimals)) });
        this.setState({ team_biz : (Number(userInfo2.team_biz)/10**(this.state.tokenDecimals)) });
        this.setState({ total_structure : (Number(userInfo2.total_structure)/10**(this.state.tokenDecimals)) }); 
-       this.setState({ staked_payouts : (Number(userInfo2.staked_payouts)/10**(this.state.tokenDecimals)) }); 
-
-       // get price
-
-    //    let priceUrl = "https://api.pancakeswap.info/api/v2/tokens/0x2668BAbeAB11780c516B1d3aD02011668AFF8aa0";
-    //    console.log('price ' + priceUrl) 
-               
-        // fetch(priceURL)
-        // .then(res => res.json())
-        // .then((out) => {
-        //     prmPrice = Number(out.data.price).toFixed(4) );
-        // })
-        // .catch(err => { throw err });
-
-        // this.setState({prmPrice})
-
-        // console.log(this.state.prmPrice)
-
+       this.setState({ staked_payouts : (Number(userInfo2.staked_payouts)/10**(this.state.tokenDecimals)) });  
+       
         
    }
 
@@ -187,8 +158,7 @@ class TopPage extends Component {
 
     this.state = {
          symbol :'',
-         prmPrice: 0,
-
+         prmPrice: '... ', 
         } 
     }
 
@@ -219,12 +189,11 @@ class TopPage extends Component {
                 }
                  
                 {
-                    this.state.tokenApproved < 500 && this.state.user_status === false ?
+                    this.state.tokenApproved < 500  && this.state.user_status === false ?
                     
                     <ApproveUSD 
                         prmPrice = {this.state.prmPrice} 
-                        tokenBal = {this.state.tokenBal} 
-                       
+                        tokenBal = {this.state.tokenBal}  
                         tokenApproved = {this.state.tokenApproved} 
                     />  :
                     null

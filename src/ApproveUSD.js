@@ -16,12 +16,12 @@ export class ApproveUSD extends Component {
             contractAddress: '0x45771E6b17b98C5269a3A47b381522bd117299FF'
         }
         
-        this.button5 = this.button5.bind(this); 
-        this.button20 = this.button20.bind(this); 
-        this.button50 = this.button50.bind(this);
-        this.button100 = this.button100.bind(this);
+        this.button100 = this.button100.bind(this); 
+        this.button20000 = this.button20000.bind(this); 
+        this.button50000 = this.button50000.bind(this); 
         this.button500 = this.button500.bind(this);
         this.button1000 = this.button1000.bind(this);
+        this.button100000 = this.button100000.bind(this);
         this.button5000 = this.button5000.bind(this);
         this.firstAllowance = this.firstAllowance.bind(this);
         this.nextAllowance = this.nextAllowance.bind(this);
@@ -89,8 +89,8 @@ export class ApproveUSD extends Component {
         } 
     } 
 
-    button100(event) {
-        this.setState({ count: this.state.count + 100 });
+    button50000(event) {
+        this.setState({ count: this.state.count + 50000 });
     }
 
     button500(event) {
@@ -105,16 +105,16 @@ export class ApproveUSD extends Component {
         this.setState({ count: this.state.count + 5000 });
     }
 
-    button20(event) {
-        this.setState({ count: this.state.count + 20 });
+    button20000(event) {
+        this.setState({ count: this.state.count + 20000 });
     }
 
-    button5(event) {
-        this.setState({ count: this.state.count + 5 });
-    }
+    button100(event) {
+        this.setState({ count: this.state.count + 100 });
+    } 
 
-    button50(event) {
-        this.setState({ count: this.state.count + 50 });
+    button100000(event) {
+        this.setState({ count: this.state.count + 100000 });
     }
  
 
@@ -182,14 +182,15 @@ export class ApproveUSD extends Component {
                         <input type="text" style={{ backgroundColor: "black", borderRadius: "2px", height: "50px", color: "#eee97f", fontSize: "25px", paddingLeft: "30px", border: "4px solid white", width: "100%" }} value={this.state.count} /> <br /><br />
 
 
-                        <a href="#10" className="btn btn-primary" style={addButton} onClick={this.button5}>+5</a> 
-                        <a href="#20" className="btn btn-primary" style={addButton} onClick={this.button20}>+20</a> 
-                        <a href="#50" className="btn btn-primary" style={addButton} onClick={this.button50}>+50</a> 
                         <a href="#100" className="btn btn-primary" style={addButton} onClick={this.button100}>+100</a> 
                         <a href="#500" className="btn btn-primary" style={addButton} onClick={this.button500}>+500</a> 
                         <a href="#1000" className="btn btn-primary" style={addButton} onClick={this.button1000}>+1000</a> 
                         <a href="#5000" className="btn btn-primary" style={addButton} onClick={this.button5000}>+5000</a>  
-                        <a href="#reset" className="btn btn-primary" style={addButton} onClick={this.reset}>Reset</a><br />
+                        <a href="#20000" className="btn btn-primary" style={addButton} onClick={this.button20000}>+20000</a> 
+                        <a href="#50000" className="btn btn-primary" style={addButton} onClick={this.button50000}>+50000</a> 
+                        <a href="#100000" className="btn btn-primary" style={addButton} onClick={this.button100000}>+100000</a>
+                        <a href="#reset" className="btn btn-primary" style={addButton} onClick={this.reset}>Reset</a>
+                        <br />
 
                         <br />
 
