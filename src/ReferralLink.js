@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
 // let url = "https://biyondinfinity.farm/a/";
-let url = "https://incomparable-pie-5be273.netlify.app/a/";
+let url = "https://primalbankv2.com/a/";
 
 export class ReferralLink extends Component {
-
+    
     constructor(props) {
         super(props)
 

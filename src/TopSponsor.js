@@ -29,11 +29,11 @@ class TopSponsor extends Component {
         this.setState({ topShare4 : Number( this.state.topShare*15/100).toFixed(4)   });   
         this.setState({ topShare5 : Number( this.state.topShare*10/100).toFixed(4)   });   
  
-        this.setState({ topShareUSD1 : Number(this.state.topShare1*this.props.prmPrice).toFixed(4)   });   
-        this.setState({ topShareUSD2 : Number(this.state.topShare2*this.props.prmPrice).toFixed(4)   });   
-        this.setState({ topShareUSD3 : Number(this.state.topShare3*this.props.prmPrice).toFixed(4)   });   
-        this.setState({ topShareUSD4 : Number(this.state.topShare4*this.props.prmPrice).toFixed(4)   });   
-        this.setState({ topShareUSD5 : Number(this.state.topShare5*this.props.prmPrice).toFixed(4)   }); 
+        // this.setState({ topShareUSD1 : Number(this.state.topShare1*this.props.prmPrice).toFixed(4)   });   
+        // this.setState({ topShareUSD2 : Number(this.state.topShare2*this.props.prmPrice).toFixed(4)   });   
+        // this.setState({ topShareUSD3 : Number(this.state.topShare3*this.props.prmPrice).toFixed(4)   });   
+        // this.setState({ topShareUSD4 : Number(this.state.topShare4*this.props.prmPrice).toFixed(4)   });   
+        // this.setState({ topShareUSD5 : Number(this.state.topShare5*this.props.prmPrice).toFixed(4)   }); 
  
         const poolTopInfo = await contractInstance.poolTopInfo() ;
         var addrs1, addrs2, addrs3, addrs4, addrs5, deps1, deps2, deps3, deps4, deps5;
@@ -133,11 +133,11 @@ class TopSponsor extends Component {
                         topShare4={this.state.topShare4}
                         topShare5={this.state.topShare5}
 
-                        topShareUSD1={this.state.topShareUSD1}
-                        topShareUSD2={this.state.topShareUSD2}
-                        topShareUSD3={this.state.topShareUSD3}
-                        topShareUSD4={this.state.topShareUSD4}
-                        topShareUSD5={this.state.topShareUSD5}
+                        // topShareUSD1={this.state.topShareUSD1}
+                        // topShareUSD2={this.state.topShareUSD2}
+                        // topShareUSD3={this.state.topShareUSD3}
+                        // topShareUSD4={this.state.topShareUSD4}
+                        // topShareUSD5={this.state.topShareUSD5}
                         deps1={this.state.deps1}
                         subAddress1={this.state.subAddress1}
                         deps2={this.state.deps2}

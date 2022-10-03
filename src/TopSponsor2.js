@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import 'react-toastify/dist/ReactToastify.css';
  
 class TopSponsor2 extends Component {
-
+     
     render() {
 
         const colStyle = {
@@ -31,7 +31,9 @@ class TopSponsor2 extends Component {
                                 {this.props.deps1 > 0 ? this.props.subAddress1 : null}... </p>
                                 <br/>
                                 <p style={{ color: "#eee97f", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
-                                {this.props.topShare1  } PRM <span style={{color:"white"}}>({this.props.topShareUSD1 } USDT)</span> </p>    
+                                {this.props.topShare1  } PRM
+                                 {/* <span style={{color:"white"}}>({this.props.topShare1*this.state.prmPrice } USDT)</span>  */}
+                                </p>    
 
                             <br /><br />
 
@@ -41,7 +43,9 @@ class TopSponsor2 extends Component {
                                 {this.props.deps2 > 0 ? this.props.subAddress2 : null}... </p>
                                 <br/>
                                 <p style={{ color: "#eee97f", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
-                                {this.props.topShare2  } PRM <span style={{color:"white"}}>({this.props.topShareUSD2 } USDT)</span> </p>    
+                                {this.props.topShare2  } PRM
+                                 {/* <span style={{color:"white"}}>({this.props.topShare2*this.state.prmPrice } USDT)</span>  */}
+                                </p>    
 
                             <br /><br />
                             <p style={{ color: "#eee97f", fontSize: "17px", float: "left" }}>
@@ -50,7 +54,9 @@ class TopSponsor2 extends Component {
                                 {this.props.deps3 > 0 ? this.props.subAddress3 : null}... </p>
                                 <br/>
                                 <p style={{ color: "#eee97f", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
-                                {this.props.topShare3  } PRM <span style={{color:"white"}}>({this.props.topShareUSD3 } USDT)</span> </p>    
+                                {this.props.topShare3  } PRM
+                                 {/* <span style={{color:"white"}}>({this.props.topShare3*this.state.prmPrice } USDT)</span>  */}
+                                </p>    
 
                             <br /><br />
                             <p style={{ color: "#eee97f", fontSize: "17px", float: "left" }}>
@@ -59,7 +65,9 @@ class TopSponsor2 extends Component {
                                 {this.props.deps4 > 0 ? this.props.subAddress4 : null}... </p>
                                 <br/>
                                 <p style={{ color: "#eee97f", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
-                                {this.props.topShare4  } PRM <span style={{color:"white"}}>({this.props.topShareUSD4 } USDT)</span> </p>    
+                                {this.props.topShare4  } PRM
+                                 {/* <span style={{color:"white"}}>({this.props.topShare4*this.state.prmPrice } USDT)</span>  */}
+                                </p>    
                                 
                             <br /><br />
 
@@ -69,7 +77,9 @@ class TopSponsor2 extends Component {
                                 {this.props.deps5 > 0 ? this.props.subAddress5 : null}... </p>
                                 <br/>
                                 <p style={{ color: "#eee97f", fontSize: "17px", float: "right", fontFamily: "MyFont" }}>
-                                {this.props.topShare5  } PRM <span style={{color:"white"}}>({this.props.topShareUSD5 } USDT)</span> </p>    
+                                {this.props.topShare5  } PRM
+                                 {/* <span style={{color:"white"}}>({this.props.topShare5*this.state.prmPrice } USDT)</span>  */}
+                                </p>    
 
                             <br /><br />
                             {/* <p>
