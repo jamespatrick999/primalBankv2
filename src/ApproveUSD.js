@@ -13,7 +13,7 @@ export class ApproveUSD extends Component {
 
         this.state = {
             count: 0, 
-            contractAddress: '0x45771E6b17b98C5269a3A47b381522bd117299FF'
+            contractAddress: '0x3357af4613E6478d70074C8a6D4DFd572d955712'
         }
         
         this.button100 = this.button100.bind(this); 
