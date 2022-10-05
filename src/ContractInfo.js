@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 
 toast.configure();
-
+const bscUrl = "https://bscscan.com/address/0x3357af4613e6478d70074c8a6d4dfd572d955712#code";
 export class ContractInfo extends Component {
  
     render(){
@@ -27,6 +27,9 @@ export class ContractInfo extends Component {
 
                         <div className="col-xl-12" style={{ textAlign: "center" }}>
            
+                            <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>Contract Address</p>
+                            <a href={bscUrl} style={{ color: "#eee97f", fontSize: "15px", textAlign: "center" }}>  0x3357af4613E6478d70074C8a6D4DFd572d955712</a>
+                            <br /><br />
                             <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>Contract PRM Balance</p>
                             <a href="#1" style={{ color: "#eee97f", fontSize: "15px", textAlign: "center" }}> {this.props.contractBal } PRM </a>
                             <br /><br />

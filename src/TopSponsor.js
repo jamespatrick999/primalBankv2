@@ -17,7 +17,7 @@ class TopSponsor extends Component {
     loadBlockChainData = async () => {
 
         // Global Stats
-        const sunny = 10**18;
+        const sunny = 10**6;
 
         let { contractInstance } = await getBlockchain();
         let pool_balance = await contractInstance.pool_balance();
