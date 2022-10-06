@@ -222,7 +222,10 @@ class TopPage extends Component {
                     draw_hrs={this.state.draw_hrs}
                     draw_mins={this.state.draw_mins}
                     draw_secs={this.state.draw_secs}
-                />           
+                />     
+                {
+                    this.state.user_status === true ?
+                    
                 <UserInfo 
                     upline =        {this.state.upline}   
                     instant_bonus  = {this.state.instant_bonus }
@@ -234,17 +237,26 @@ class TopPage extends Component {
                     team_biz   = {this.state.team_biz } 
                     total_structure   = {this.state.total_structure } 
                     staked_payouts   = {this.state.staked_payouts } 
-                />
+                /> : null }
+                 {
+                    this.state.user_status === true ?
+                 
                 <Withdraw
                     avlBalance = {this.state.avlBalance}
-                />
+                />: null }
+                {
+                    this.state.user_status === true ?
+                 
                 <ReferralLink
                     currentAcc = {this.state.currentAcc}
-                />
+                />: null }
+                {
+                    this.state.user_status === true ?
+                 
                 <TopSponsor
                     prmPrice   = {this.state.prmPrice } 
 
-                />
+                />: null }
 
                     
                 
