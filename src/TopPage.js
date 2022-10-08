@@ -159,7 +159,7 @@ class TopPage extends Component {
        this.setState({ total_stakes : (Number(userInfo2.total_stakes)/10**(this.state.tokenDecimals)) });
        this.setState({ total_payouts : (Number(userInfo2.total_payouts)/10**(this.state.tokenDecimals)) });
        this.setState({ team_biz : (Number(userInfo2.team_biz)/10**(this.state.tokenDecimals)) });
-       this.setState({ total_structure : (Number(userInfo2.total_structure)/10**(this.state.tokenDecimals)) }); 
+       this.setState({ total_structure :  Number(userInfo2.total_structure) }); 
        this.setState({ staked_payouts : (Number(userInfo2.staked_payouts)/10**(this.state.tokenDecimals)) });  
        
         
