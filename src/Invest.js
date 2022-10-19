@@ -141,7 +141,7 @@ export class Invest extends Component {
                             <a href="#500000" className="btn btn-primary" style={addButton} onClick={this.button500k}>+500 k</a>
                             <a href="#reset" className="btn btn-primary" style={addButton} onClick={this.reset}>Reset</a><br /> */}
                             
-                            <p style={{ color: "#eee97f", textAlign: "center", fontSize: "15px" }}>USD Approved : {Number(this.props.tokenApproved).toFixed(0) } PRM ({Number(this.props.tokenApproved*this.props.prmPrice).toFixed(4)} USD)</p> 
+                            <p style={{ color: "#eee97f", textAlign: "center", fontSize: "15px" }}>PRM Approved : {Number(this.props.tokenApproved).toFixed(0) } PRM ({Number(this.props.tokenApproved*this.props.prmPrice).toFixed(4)} USD)</p> 
 
                             <div style={{ textAlign: "center" }}>
                                 <button type="submit" className="btn btn-success" style={purchaseButton}>Stake</button> 

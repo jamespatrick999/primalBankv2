@@ -60,7 +60,7 @@ export class UserInfo extends Component {
                             <a href="#1" style={{ color: "#eee97f", fontSize: "15px", textAlign: "center" }}> {this.props.team_biz } PRM </a>
                             <br /><br /> 
                             <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>Total structure</p>
-                            <a href="#1" style={{ color: "#eee97f", fontSize: "15px", textAlign: "center" }}> {this.props.total_structure } PRM </a>
+                            <a href="#1" style={{ color: "#eee97f", fontSize: "15px", textAlign: "center" }}> # {this.props.total_structure }   </a>
                             <br /><br /> 
                             <p style={{ color: "white", fontSize: "17px", textAlign: "center" }}>Generation Bonus</p>
                             <a href="#1" style={{ color: "#eee97f", fontSize: "15px", textAlign: "center" }}> {this.props.gen_bonus } PRM </a>
